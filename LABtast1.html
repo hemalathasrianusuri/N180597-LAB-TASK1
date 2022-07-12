@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration for F1H2O Event</title>
+        <link rel="stylesheet" href="./responsiveRegistration.css">
+        <!-- <script type="text/javascript" lang="javascript" src="./responsiveRegistaration.js"></script>
+        <script type="text/javascript" src="hema.js"></script> -->
+    </head>
+   <script>
+    function changeBg(){
+        const images=[
+            'url("fbg.jpg")',
+            'url("fbg1.jpg")',
+            'url("fbg2.jpg")',
+            'url("fbg3.jpg")',
+    
+        ]
+        const section=document.querySelector("#img")
+        const bg=images[Math.floor(Math.random()* images.length )];
+        img.style.backgroundImage=bg;
+    }
+    setInterval(changeBg,500)
+   </script>
+    <script type = "text/javascript">
+        function rent(){
+            var n=document.getElementById("days").value;
+            // var text=document.querySelector('#hema').innerText;
+            if(document.getElementById("1").checked||document.getElementById("4").checked){
+                var rent1=2000*Number(n);
+                document.querySelector('#hema').innerText="your total cost of the rent is:"+rent1+"Rs";
+            }
+            // else(document.getElementById("2").checked||document.getElementById("3").checked){
+            else{
+                var rent1=3000*Number(n);
+                document.querySelector('#hema').innerText= "your total cost of the rent is:"+rent1+"Rs";
+
+            }
+        }
+        function Validation(){
+            if(Uvalidate()&&Evalidate()&&Pvalidation()&&(DDvalidation()||ACvalidation())){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function Uvalidate(){
+            var Uname = document.getElementById("uname").value;
+            var Uname2 = document.getElementById("uname");
+            var namere = /^F[a-z,A-Z,@,.,_,-]{3,9}$/;
+            if (namere.test(Uname)) {
+                //alert("done");
+                return true;
+            }
+            else {
+                Uname2.style.border="red solid 3px";
+                // l.style.visibility="visible";
+                // setTimeout(function() {
+                // document.getElementById("Uname").fadeOut();
+                // }, 100);
+                // setTimeout();
+                //setTimeout(() => {
+                //Fname2.style.border.visibility="hidden";
+                //}, 100);
+                return false;
+            }
+        }
+        function Evalidate(){
+            var E=document.getElementById("email").value;
+            var E1=document.getElementById("email");
+            var ere=/^\w+([\.-]?\w+,@,\,)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (ere.test(E)) {
+                return true;
+            }
+            else {
+                E1.style.border="red solid 3px";
+                return false;
+
+            }   
+        }
+        function Pvalidation(){
+            var pre1=/^977\d{7}$/;
+            var pre2=/^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+            var phn=document.getElementById("mobile").value;
+            var phn1=document.getElementById("mobile")
+            if (pre1.test(phn)) {
+                return true;
+            }
+            else if(pre2.test(phn)){
+                return true;
+            }
+            else {
+                phn1.style.border="red solid 3px";
+                return false;
+
+            }   
+
+
+        }
+        function Cvalidation(){
+            var C=document.getElementById("city").value;
+            var C1=document.getElementById("city");
+            if(C==="America"||"England"||"Germany"){
+            beer.style.display="block";
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        }
+        function FEESvalidation(){
+            var FEES1=document.getElementById("fees").value;
+            if(FEES1=="Account Number"){
+                AC.style.display="block"; 
+                DD.style.display="none"; 
+            }
+            else if( FEES1=="DD Number"){
+                DD.style.display="block";
+                AC.style.display="none";
+                
+            }
+
+        }
+        function DDvalidation(){
+            var dd1=document.getElementById("dd").value;
+            var dd2=document.getElementById("dd");
+            var ddre=/^SBIN\d{8}$/;
+            if(ddre.test(dd1)){
+                return true;
+            }
+            else{
+                dd.style.border="red solid 2px";
+                return false;
+            }
+        }
+        function ACvalidation(){
+            var ac1=document.getElementById("ac").value;
+            var ac2=document.getElementById("ac");
+            var acre=/^\d{11}$/;
+            if(acre.test(ac1)){
+                return true;
+            }
+            else{
+                ac.style.border="red solid 2px";
+                return false;
+            }
+
+        }
+
+    //      var images = [], x = 0;
+    //     images[0] = "fbg1.jpg";
+    //     images[1] = "fbg2.jpg";
+    //     images[2] = "fbg3.jpg";
+    //     function changeImage()
+    //     {
+    //     var img2 = document.getElementsByClassName("container");
+    //     img.style.backgroundImage = images[x];
+    //     x++;
+    
+    //     if(x >= images.length){
+    //         x = 0;
+    //     } 
+    //    var timerid = setInterval(changeImage(), 10000);
+    // }
+   
+    
+          </script>
+    <style>
+
+        *{box-sizing: border-box;
+}
+body{
+    font-size: larger;
+}
+#h11:hover{
+    color: yellow;
+
+}
+input[type=text], input[type=email], input[type=number], input[type=select], input[type=date],input[type=select],input[type=password], input[type=tel]
+{
+    width: 45%;
+    padding: 12px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+textarea{
+    width:45%;
+    padding: 12px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+.div1:hover{
+    background-color: green;
+}
+
+
+.div1{
+    text-align: center;
+    width:25%;
+    height:100PX;
+    margin-left: 35%;
+    border-radius: 20px;
+    background-color:rgba(64, 64, 216, 0.889);
+    border:black 2px solid;
+}
+/* input[type=radio],input[type=checkbox]{
+    width: 1%;
+    padding-left: 0%;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+} */
+h1{
+    font-family: Arial;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    text-decoration: underline;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:left;
+}
+input[type=submit]:hover {
+background-color: #32a336;
+}
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+    background-image: url(fbg.jpg);
+    border-radius: 5px;
+    background-color:#f2f2f2;
+     padding-left: 200px;
+    /* padding-left: 400px; */ 
+}
+.col-10{
+    float: left;
+    width:40%;
+    margin-top: 6px;
+    padding-left: 50px;
+}
+.col-90{
+    float: left;
+    width: 90%;
+    margin-top: 6px;
+    padding-left: 50px;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .col-10,.col-90,input[type=submit]{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+    </style>
+       
+    <body onload="//changeImage()">
+        <div class="div1"><h1 style="padding-top:10px; " id="h11"><b style="font-size: 40px;"> F1H2O </b><sub>RGUKT</sub></h1></div>
+        <form action="hema.php" onsubmit="return Validation()">
+        <div class="container"  id="img" >
+            <div class="row">
+                <div class="col-10">
+                    <label for="fname">UserName:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="uname" name="username" placeholder="Enter your user name" onkeyup="this.value=this.value.toUpperCase()">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-90">
+                    <input type="email" id="email" name="email" placeholder="it should contain @,.">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="mobile">Mobile Number:</label>
+                </div>
+                <div class="col-90">
+                    <input type="tel" id="mobile" name="mobile" placeholder="only 10 digits or 12 digits are allowed">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="city">COUNTRY:</label>
+                </div>
+                <div class="col-10" >
+                    <select type="text" id="city" name="COUNTRY" maxlength="10" style="margin:10px ;" >COUNTRY:
+                    <option  value="INDIA" name="INDIA">INDIA
+                    <option onclick="Cvalidation()" value="America" name="America">America
+                    <option onclick="Cvalidation()" value="England" name="England">England
+                    <option onclick="Cvalidation()" value="Germany" name="Germany">Germany
+                    <option value="RGUKT" name="RGUKT">RGUKT
+                    </select>
+                </div>
+            </div>
+            <div class="row" id="beer" style="display: none;">
+                <div class="col-10">
+                    <label for="city">do you want beer?</label>
+                </div>
+                <div class="col-90" style="padding-top: 10px; width: 200px;">
+                    <input type="checkbox" name="yes">Yes
+                    <input type="checkbox" name="no">No
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="city">Accomodation:</label>
+                </div>
+                <div class="col-10" style="padding-top: 10px;">
+                    <input type="radio" id="1" name="1" value="NUZVID">NUZVID<br>
+                    <input type="radio" id="2" name="1" value="SKLM">SKLM<br>
+                    <input type="radio" id="3" name="1" value="ONGOLE">ONGOLE<br>
+                    <input type="radio" id="4" name="1" value="Kadapa">Kadapa<br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="city">Services you required:</label>
+                </div>
+                <div class="col-10" style="padding-top: 10px;">
+                    <input type="checkbox" name="Breakfast">Breakfast<br>
+                    <input type="checkbox" name="Lunch">Lunch<br>
+                    <input type="checkbox" name="Snacks">Snacks<br>
+                    <input type="checkbox" name="Tea">Tea<br>
+                    <input type="checkbox" name="Coffee">Coffee<br>
+                    <input type="checkbox" name="Eggs">Eggs<br>
+                    <input type="checkbox" name="Dinner">Dinner<br>
+                </div>
+            </div>
+            
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="city">No.of days staying:</label>
+                </div>
+                <div class="col-90" style="padding-top: 10px; width: 200px;">
+                    <input type="number" id="days" min="1" max="10" onchange="rent()">
+                </div>
+            </div>
+            <br>
+               <b><p id="hema"> your total cost of the rent is:</p></b> 
+            <div class="row">
+                <div class="col-10">
+                    <label for="city">Registration Fee payment type:</label>
+                </div>
+                <div class="col-90" style="padding-top: 10px; width: 200px;">
+                    <select type="text" id="fees" name="COUNTRY" maxlength="10" style="margin:10px ;" onclick="FEESvalidation()">
+                        <option value="DD Number" name="INDIA">DD Number
+                        <option  value="Account Number" name="America">Account Number
+                        </select>
+                </div>
+            </div>
+            <div class="row" id="DD" style="display:none;">
+                <div class="col-10">
+                    <label for="city" >DD Number:</label>
+                </div>
+                <div class="col-90" style="padding-top: 10px;">
+                    <input type="text" id="dd" placeholder="enter the 8 digit DD number " max="8" onchange="DDvalidation()">
+                </div>
+            </div>
+            <div class="row" id="AC" style="display:none;" >
+                <div class="col-10">
+                    <label for="city" >Acount Number:</label>
+                </div>
+                <div class="col-90" style="padding-top: 10px;">
+                    <input type="text" id="ac" placeholder="enter your account number " max="8" onchange="ACvalidation()">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-10">
+                <input type="submit" value="Register" onclick="return Validation();" ></a>
+            </div>
+            </div>  
+        </div> 
+    </form>
+    </body>
+</html>
